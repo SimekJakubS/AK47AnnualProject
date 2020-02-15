@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+    android:id="@+id/core_new_date"
+    android:title="Nový zápas"
+
+    />
+
+    <item
+        android:id="@+id/core_info"
+        android:title="Informácie o autorovi"
+
+        />
+
+    <item
+        android:id="@+id/core_sign_out"
+        android:title="Odhlásiť"
+
+        />
+
+</menu>

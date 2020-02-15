@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "449494538103",
+    "firebase_url": "https://amatersky-klub-47.firebaseio.com",
+    "project_id": "amatersky-klub-47",
+    "storage_bucket": "amatersky-klub-47.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449494538103:android:53c96c58490f5aeaf13372",
+        "android_client_info": {
+          "package_name": "com.e.amatrskyklub47"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "449494538103-decup4bfqnac7ir3kiji5utpf33ara13.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.e.amatrskyklub47",
+            "certificate_hash": "6825ef8caffa1c871ea2e516779fd99b59c7511c"
+          }
+        },
+        {
+          "client_id": "449494538103-550mmn3iocqq4858ru1p67rppdira4kg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhtMmN-EdHdDZkQ7ISFYISlUU9tj9_E8s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "449494538103-550mmn3iocqq4858ru1p67rppdira4kg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

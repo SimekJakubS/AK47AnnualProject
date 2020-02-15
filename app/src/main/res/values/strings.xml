@@ -1,0 +1,17 @@
+<resources>
+    //BASIC RESOURCES TO APP
+    <string name="app_name">Amatérsky Klub 47</string>
+    <string name="email">Email</string>
+    <string name="heslo">Heslo</string>
+    <string name="hello">Vitajte </string>
+
+    //button string resources
+    <string name="registerButton">Zaregistrovať sa</string>
+    <string name="loginButton">Prihlásiť sa</string>
+    <string name="backToMain">Naspäť na registráciu</string>
+    <string name="toLogin">Už máte účet?</string>
+
+    //TEXT
+    <string name="textAuthor">Táto aplikácia bola vytvorená ako ročníkový projekt</string>
+    <string name="nameAuthor">Jakub Šimek</string>
+</resources>

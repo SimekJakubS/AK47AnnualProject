@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--LISTA-->
+    <color name="colorPrimaryDark">#163172</color>
+    <!--NADPIS APPKY PRI LISTE-->
+    <color name="colorPrimary">#1E56A0</color>
+    <color name="colorAccent">#163172</color>
+
+    <!-- PRVKY APPKY -->
+
+    <color name="telo">#F6F6F6</color>
+    <color name="buttons">#1E56A0</color>
+    <color name="buttonsText">#F6F6F6</color>
+    <color name="vyplnenePolicko">#D6E4F0</color>
+</resources>
+<!--
+PALETA:
+#085F63 SILNA MODRA
+#49BEB7 SLABSIA MODRA
+#FACF5A Zlta ladiaca
+#FF5959 Cervena ladiaca
+D81B60 RUZOVA NA ACCENT
+
+
+VYBER COLOR PICKERA ===> ku #1e56a0 sa hodi #a0681e
+VYBER COLOR PICKERA ===> ku #1e56a0 sa hodi #a0681e
+-->
