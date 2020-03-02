@@ -10,5 +10,4 @@ class NewDatabaseWrite : AppCompatActivity()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.database_write)
     }
-
 }
