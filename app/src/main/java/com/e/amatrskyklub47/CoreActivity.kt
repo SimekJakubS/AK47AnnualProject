@@ -12,6 +12,14 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_core.*
 import kotlinx.android.synthetic.main.activity_register.*
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import androidx.core.app.ComponentActivity
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+
+
 
 class CoreActivity : AppCompatActivity()
 {
@@ -47,8 +55,10 @@ class CoreActivity : AppCompatActivity()
 
             R.id.core_new_date ->
             {
-                Toast.makeText(this, "Nový zápas vytvorený", Toast.LENGTH_SHORT).show()
-                writeToDatabaseTest()
+                //Toast.makeText(this, "Nový zápas vytvorený", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, NewDatabaseWrite::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK )
+                startActivity(intent)
             }
 
             R.id.core_info ->
@@ -66,12 +76,6 @@ class CoreActivity : AppCompatActivity()
             }
         }
         return super.onOptionsItemSelected(item)
-    }
-
-    private fun writeToDatabaseTest()
-    {
-        val intent = Intent(this, NewDatabaseWrite::class.java)
-        startActivity(intent)
     }
 
     //TOTO JE MENU NA BOKU

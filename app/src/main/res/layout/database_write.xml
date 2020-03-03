@@ -7,20 +7,20 @@
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/nameWrite"
+        android:id="@+id/nameWriteDatabase"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/dateWrite"
+        app:layout_constraintEnd_toEndOf="@+id/dateWriteDatabase"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/dateWrite"
-        app:layout_constraintTop_toBottomOf="@+id/dateWrite" />
+        app:layout_constraintStart_toStartOf="@+id/dateWriteDatabase"
+        app:layout_constraintTop_toBottomOf="@+id/dateWriteDatabase" />
 
     <EditText
-        android:id="@+id/dateWrite"
+        android:id="@+id/dateWriteDatabase"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Button"
-        app:layout_constraintEnd_toEndOf="@+id/nameWrite"
-        app:layout_constraintStart_toStartOf="@+id/nameWrite"
-        app:layout_constraintTop_toBottomOf="@+id/nameWrite" />
+        app:layout_constraintEnd_toEndOf="@+id/nameWriteDatabase"
+        app:layout_constraintStart_toStartOf="@+id/nameWriteDatabase"
+        app:layout_constraintTop_toBottomOf="@+id/nameWriteDatabase" />
 </androidx.constraintlayout.widget.ConstraintLayout>
