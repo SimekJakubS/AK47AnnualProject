@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.FirebaseDatabase
 
@@ -54,6 +55,14 @@ class NewDatabaseWrite : AppCompatActivity(), View.OnClickListener {
         val ref = FirebaseDatabase.getInstance().getReference("databazaZapis")
 
         val akciaId = ref.push().key
+
+        val akcia = DatabaseLocal(akciaId, datumVal, menoVal)
+
+        if (akciaId != null) {
+            ref.child(akciaId).setValue(akcia).addOnCompleteListener {
+                Toast.makeText(applicationContext, "Odoslane pravdepodobne", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
 
