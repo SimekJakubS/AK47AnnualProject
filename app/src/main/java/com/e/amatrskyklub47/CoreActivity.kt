@@ -12,13 +12,22 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_core.*
 import kotlinx.android.synthetic.main.activity_register.*
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 import androidx.core.app.ComponentActivity
 import androidx.core.app.ComponentActivity.ExtraData
 import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-
+import android.view.View
+import android.widget.LinearLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.database.*
+import com.xwray.groupie.GroupAdapter
+import com.xwray.groupie.Item
+import com.xwray.groupie.ViewHolder
+import kotlinx.android.synthetic.main.database_write.*
+import kotlinx.android.synthetic.main.event_row_show.*
+import kotlinx.android.synthetic.main.event_row_show.view.*
+import com.e.amatrskyklub47.DatabaseWrite as DatabaseWrite1
 
 
 class CoreActivity : AppCompatActivity()
@@ -29,10 +38,55 @@ class CoreActivity : AppCompatActivity()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_core)
 
-        verifyIfUserIsLoggedIn()
+        //ACTION BAR TLACIDLO SPAT TOTO JE ZAPIS AKO VYMAZAT Z ACTION BARU NADPIS!!
+        val actionbar = supportActionBar
+        actionbar!!.title = ""
+        //FUNGUJE TIEZ:  supportActionBar?.title = ""
+
+        verifyIfUserIsLoggedIn() //KONTROLUJE CI JE POUZIVATEL PRIHLASENY
+
+        //CITANIE Z DATABAZY,ZOBRAZOVANIE AKO RECYCLER VIEW V OKNE----------------------------------
+
+        //val adapter = GroupAdapter<ViewHolder>()
+        //adapter.add(UdalostItem())
+        //recyclerWiewWindow.adapter = adapter
+
+        recyclerWiewWindow.layoutManager = LinearLayoutManager(this)
+        fetchEvents()
+
+        //REFRESH BUTTON IMAGE
+        refreshButton.setOnClickListener {
+            fetchEvents()
+        }
+
     }
 
-    private fun verifyIfUserIsLoggedIn()
+    private fun fetchEvents(){
+        val ref = FirebaseDatabase.getInstance().getReference("/Zapasy")
+        ref.addListenerForSingleValueEvent(object : ValueEventListener{
+
+            override fun onDataChange(p0: DataSnapshot) {
+                val adapter = GroupAdapter<ViewHolder>()
+
+                p0.children.forEach {
+                    //it.toString()
+                    Log.d("Logcat",it.toString())
+                    val udalost = it.getValue(DatabaseWrite1.Udalost::class.java)
+                    if (udalost != null){
+                        adapter.add(UdalostItem(udalost))
+
+                    }
+
+                }
+                recyclerWiewWindow.adapter = adapter
+            }
+            override fun onCancelled(p0: DatabaseError) {
+
+            }
+        })
+    }
+
+    private fun verifyIfUserIsLoggedIn() //VERIFIKUJE UZIVATELA CI JE PRHLASENY
     {
         var uid = FirebaseAuth.getInstance().uid
         if (uid == null)
@@ -49,9 +103,6 @@ class CoreActivity : AppCompatActivity()
                 Log.d("Logcat", "UZIVATEL JE PRIHLASENY")
                 pomocne = 0
             }
-
-            textWiew.text = "Tu najdete prehlad zapasov pre tento mesiac."
-            //TOTO JE PRIKLAD PERSONALIZOVANEHO OKNA: textWiew.text = "Hello, ${loginName.text}!!"
         }
     }
 
@@ -62,7 +113,7 @@ class CoreActivity : AppCompatActivity()
             R.id.core_new_date ->
             {
                 //Toast.makeText(this, "Nový zápas vytvorený", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, DatabaseWrite::class.java)
+                val intent = Intent(this, DatabaseWrite1::class.java)
                 //intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK )NEZNICI CORE ACTIVITY, DA SA PREPNUT NASPAT
                 startActivity(intent)
             }
@@ -95,5 +146,17 @@ class CoreActivity : AppCompatActivity()
     {
         menuInflater.inflate(R.menu.core_menu, menu)
         return super.onCreateOptionsMenu(menu)
+    }
+}
+
+//KLASA NA NAHRANIE KLASY UDALOSTI DO KNIZNIC GRROUPIE, CO JE ADAPTER NA PRACU S RECYCLER VIEW
+class UdalostItem(val udalost: com.e.amatrskyklub47.DatabaseWrite.Udalost): Item<ViewHolder>(){
+    override fun bind(viewHolder: ViewHolder, position: Int) {
+        viewHolder.itemView.nameOfEventTextView.text = udalost.menoUdalosti
+        viewHolder.itemView.dateShow.text = udalost.datum
+    }
+
+    override fun getLayout(): Int {
+        return R.layout.event_row_show
     }
 }
