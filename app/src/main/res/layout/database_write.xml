@@ -4,42 +4,91 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/telo"
     android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/nameWriteDatabase"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="Name"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/dateWriteDatabase"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/dateWriteDatabase"
-        app:layout_constraintTop_toBottomOf="@+id/dateWriteDatabase" />
 
-    <EditText
-        android:id="@+id/dateWriteDatabase"
+    <Button
+        android:id="@+id/datePickerButton"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:ems="10"
-        android:hint="Datum"
-        android:inputType="date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="45dp"
+        android:background="@drawable/rounded_button"
+        android:text="Vyberte dátum"
+        android:textAlignment="center"
+        android:textColor="#1E56A0"
+
+        app:layout_constraintEnd_toEndOf="@+id/databaseUpdateButton"
+        app:layout_constraintStart_toStartOf="@+id/radio_group"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <Button
         android:id="@+id/databaseUpdateButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="@+id/nameWriteDatabase"
-        app:layout_constraintStart_toStartOf="@+id/nameWriteDatabase"
-        app:layout_constraintTop_toBottomOf="@+id/nameWriteDatabase" />
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_policka"
+        android:text="Potvrdiť"
+        android:textColor="@color/vyplnenePolicko"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/radio_group"
+        app:layout_constraintTop_toBottomOf="@+id/datePickerButton" />
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="201dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Futbal - Žaškov"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="201dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="Futbal - Dolný Kubín"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="201dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="Hokej - Ružomberok"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="201dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="Hokej - Dolný Kubín"
+            android:textSize="18sp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/telo"
+        app:layout_constraintEnd_toEndOf="@+id/radio_group"
+        app:layout_constraintStart_toStartOf="@+id/radio_group"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 <resources>
     //BASIC RESOURCES TO APP
-    <string name="app_name">Amatérsky Klub 47</string>
+    <string name="app_name">AK 47</string>
+    <string name="app_name2"> </string>
     <string name="email">Email</string>
     <string name="heslo">Heslo</string>
     <string name="hello">Vitajte </string>
@@ -14,4 +15,10 @@
     //TEXT
     <string name="textAuthor">Táto aplikácia bola vytvorená ako ročníkový projekt</string>
     <string name="nameAuthor">Jakub Šimek</string>
+
+    //RADIO BUTTONS
+    <string name="radioButton1">Žaškov - futbal</string>
+    <string name="radioButton2">DK - futbal</string>
+    <string name="radioButton3">RK - hokej</string>
+    <string name="radioButton4">DK - hokej</string>
 </resources>

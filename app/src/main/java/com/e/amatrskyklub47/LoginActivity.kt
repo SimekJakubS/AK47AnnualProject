@@ -19,7 +19,7 @@ class LoginActivity : AppCompatActivity()
             val email = email_login.text.toString()
             val password = password_login.text.toString()
 
-            Log.d("Logcat", "Pokus o [rrihlasenie sa with mail; $email/***")
+            Log.d("Logcat", "Pokus o prihlasenie sa with mail; $email")
 
             if (email.isEmpty())
             {

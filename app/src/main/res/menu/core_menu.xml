@@ -3,10 +3,10 @@
 
 
     <item
-    android:id="@+id/core_new_date"
-    android:title="Nový zápas"
+        android:id="@+id/core_new_date"
+        android:title="Nový zápas"
 
-    />
+        />
 
     <item
         android:id="@+id/core_info"
@@ -15,9 +15,17 @@
         />
 
     <item
+        android:id="@+id/core_rate_app"
+        android:title="Ohodnoťte aplikáciu"
+
+        />
+
+    <item
         android:id="@+id/core_sign_out"
         android:title="Odhlásiť"
 
         />
+
+
 
 </menu>

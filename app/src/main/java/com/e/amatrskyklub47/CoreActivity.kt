@@ -43,7 +43,13 @@ class CoreActivity : AppCompatActivity()
         }
         else
         {
-            Log.d("Logcat", "UZIVATEL JE PRIHLASENY")
+            var pomocne : Int = 1
+            if(pomocne == 1)
+            {
+                Log.d("Logcat", "UZIVATEL JE PRIHLASENY")
+                pomocne = 0
+            }
+
             textWiew.text = "Tu najdete prehlad zapasov pre tento mesiac."
             //TOTO JE PRIKLAD PERSONALIZOVANEHO OKNA: textWiew.text = "Hello, ${loginName.text}!!"
         }
@@ -56,14 +62,20 @@ class CoreActivity : AppCompatActivity()
             R.id.core_new_date ->
             {
                 //Toast.makeText(this, "Nový zápas vytvorený", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, NewDatabaseWrite::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK )
+                val intent = Intent(this, DatabaseWrite::class.java)
+                //intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK )NEZNICI CORE ACTIVITY, DA SA PREPNUT NASPAT
                 startActivity(intent)
             }
 
             R.id.core_info ->
             {
                 val intent = Intent(this, AuthorInfo::class.java)
+                startActivity(intent)
+            }
+
+            R.id.core_rate_app ->
+            {
+               /* val intent = Intent(this, NewDatabaseWrite::class.java)*/
                 startActivity(intent)
             }
 
