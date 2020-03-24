@@ -126,7 +126,7 @@ class CoreActivity : AppCompatActivity()
 
             R.id.core_rate_app ->
             {
-               /* val intent = Intent(this, NewDatabaseWrite::class.java)*/
+                val intent = Intent(this, UserReview::class.java)
                 startActivity(intent)
             }
 

@@ -89,25 +89,21 @@ class DatabaseWrite : AppCompatActivity() {
             if(radio == radioButton1)
             {
                 textView4.text = "Futbal - Žaškov"
-                textView.text = "1"
             }
 
             if(radio == radioButton2)
             {
                 textView4.text = "Futbal - Dolný Kubín"
-                textView.text = "1"
             }
 
             if(radio == radioButton3)
             {
                 textView4.text = "Hokej - Ružomberok"
-                textView.text = "2"
             }
 
             if(radio == radioButton4)
             {
                 textView4.text = "Hokej - Dolný Kubín"
-                textView.text = "2"
             }
         }
         else{
@@ -124,15 +120,15 @@ class DatabaseWrite : AppCompatActivity() {
     {
         val uid = FirebaseAuth.getInstance()
         val ref = FirebaseDatabase.getInstance().getReference()
-        val udalost = Udalost(datePickerButton.text.toString(), textView4.text.toString(), textView.text.toString())
+        val udalost = Udalost(datePickerButton.text.toString(), textView4.text.toString())
 
         //ref.setValue(udalost)
 
         ref.child("Zapasy").push().setValue(udalost)
     }
 
-    class Udalost(val datum: String, val menoUdalosti: String, val cisloFotky: String){
-            constructor() : this("","","")
+    class Udalost(val datum: String, val menoUdalosti: String){
+            constructor() : this("","")
     }
 
 }
