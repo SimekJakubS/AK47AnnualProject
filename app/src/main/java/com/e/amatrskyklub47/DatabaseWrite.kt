@@ -112,7 +112,7 @@ class DatabaseWrite : AppCompatActivity() {
         }
         else{
             // If no radio button checked in this radio group
-            Toast.makeText(applicationContext,"On button click : nothing selected",
+            Toast.makeText(applicationContext,"Vyberte jednu možnosť",
                 Toast.LENGTH_SHORT).show()
         }
     }
@@ -132,7 +132,7 @@ class DatabaseWrite : AppCompatActivity() {
     }
 
     class Udalost(val datum: String, val menoUdalosti: String, val cisloFotky: String){
-        constructor() : this("","","")
+            constructor() : this("","","")
     }
 
 }

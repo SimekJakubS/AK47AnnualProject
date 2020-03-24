@@ -98,7 +98,7 @@ class CoreActivity : AppCompatActivity()
         else
         {
             var pomocne : Int = 1
-            if(pomocne == 1)
+            while (pomocne == 1)//ZABEZPECUJE ZE SA UKAZE LOG LEN JEDINY RAZ
             {
                 Log.d("Logcat", "UZIVATEL JE PRIHLASENY")
                 pomocne = 0
