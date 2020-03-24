@@ -10,13 +10,13 @@
 
     <item
         android:id="@+id/core_info"
-        android:title="Informácie o autorovi"
+        android:title="O nás"
 
         />
 
     <item
         android:id="@+id/core_rate_app"
-        android:title="Ohodnoťte aplikáciu"
+        android:title="Ohodnoťte nás"
 
         />
 

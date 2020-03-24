@@ -13,7 +13,7 @@
     <string name="toLogin">Už máte účet?</string>
 
     //TEXT
-    <string name="textAuthor">Táto aplikácia bola vytvorená ako ročníkový projekt</string>
+    <string name="textAuthor">Táto aplikácia bola vytvorená ako ročníkový projekt \n v rokoch 2019/2020 \n \n Zdrojový kód:</string>
     <string name="nameAuthor">Jakub Šimek</string>
 
     //RADIO BUTTONS

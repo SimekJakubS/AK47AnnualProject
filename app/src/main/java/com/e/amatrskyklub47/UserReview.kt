@@ -9,7 +9,6 @@ import android.widget.RatingBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.FirebaseDatabase
-import kotlinx.android.synthetic.main.user_review_activity.*
 
 class UserReview : AppCompatActivity(){
 
@@ -66,8 +65,4 @@ class UserReview : AppCompatActivity(){
     }
 
     class Review(val review: String, val rating: String)
-    {
-    }
 }
-
-//ERRORS
