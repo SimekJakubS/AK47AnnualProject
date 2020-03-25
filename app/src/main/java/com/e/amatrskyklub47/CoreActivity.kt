@@ -54,11 +54,12 @@ class CoreActivity : AppCompatActivity()
         recyclerWiewWindow.layoutManager = LinearLayoutManager(this)
         fetchEvents()
 
-        //REFRESH BUTTON IMAGE
+        //REFRESH BUTTON IMAGE => FUNKCNE!
         refreshButton.setOnClickListener {
-            fetchEvents()
+            val intent = Intent(this, CoreActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
         }
-
     }
 
     private fun fetchEvents(){

@@ -32,19 +32,32 @@ class RegisterActivity : AppCompatActivity() {
         val password = password_register.text.toString()
 
         //ABY NECRASHLA APPKA PRI ZADANI NULL V NIEKTOROM Z POLI
-        if (email.isEmpty())
+        if (email.isEmpty()) {
+            //Toast.makeText(this, "Pole nesmie byť prázdne", Toast.LENGTH_LONG).show()  TOTO MOZE BYT TIEZ, ALE TOTO JE MORE USER FRIENDLY
+            //return
+            email_register.error = "Pole nesmie byť prázdne"
+            return
+        }
+
+        if (email.length <= 11)
         {
-            Toast.makeText(this, "Zadajte email", Toast.LENGTH_SHORT).show()
+            email_register.error = "Zadajte platný email"
             return
         }
 
         if(password.isEmpty())
         {
-            Toast.makeText(this, "Zadajte heslo", Toast.LENGTH_SHORT).show()
+            password_register.error = "Zadajte heslo"
             return
         }
+
+        if (password.length <= 5)
+        {
+            password_register.error = "Heslo musí byť dlhé aspoň 6 znakov"
+            return
+        }
+
         Log.d("Logcat","Email je: "+ email)
-        Log.d("Logcat", "Heslo je: $password") //ODSTRAN PRED PREZENTACIOU TODO
 
         //FIREBASEEE AUTHENTICATION HERRE:  AK NIECO NEPOJDE,ZMEN TOTO NA MOZNOST BEZ FIREBASE
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
@@ -63,8 +76,8 @@ class RegisterActivity : AppCompatActivity() {
 
             .addOnFailureListener {
                 Log.d("Logcat", "Failed to create user: ${it.message}")
-                Toast.makeText(this, "Zadajte spravny email alebo skontrolujte pripojenie k internetu",
-                    Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Skontrolujte pripojenie k internetu",
+                    Toast.LENGTH_LONG).show()
             }
     }
 
