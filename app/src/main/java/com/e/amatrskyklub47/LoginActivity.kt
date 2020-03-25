@@ -23,13 +23,13 @@ class LoginActivity : AppCompatActivity()
 
             if (email.isEmpty())
             {
-                Toast.makeText(this, "Zadajte email", Toast.LENGTH_SHORT).show()
+                email_login.error = "Zadajte email"
                 return@setOnClickListener
             }
 
             if(password.isEmpty())
             {
-                Toast.makeText(this, "Zadajte heslo", Toast.LENGTH_SHORT).show()
+                password_login.error = "Zadajte heslo"
                 return@setOnClickListener
             }
 
